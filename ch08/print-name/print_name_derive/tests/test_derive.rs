@@ -14,8 +14,8 @@ fn test_derive() {
 
     assert_eq!(MyStruct::name(), "MyStruct");
     MyStruct::print_name();
-    assert_eq!(MyGenericStruct::<i64>::name(), "MyGenericStruct");
-    assert_eq!(MyGenericStruct::<i128>::name(), "MyGenericStruct");
-    assert_eq!(MyGenericStruct::<String>::name(), "MyGenericStruct");
+    assert_eq!(MyGenericStruct::<i64>::name(), "MyGenericStruct<T>");
+    assert_eq!(MyGenericStruct::<i128>::name(), "MyGenericStruct<T>");
+    assert_eq!(MyGenericStruct::<String>::name(), "MyGenericStruct<T>");
     MyGenericStruct::<i128>::print_name();
 }

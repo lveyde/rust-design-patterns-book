@@ -1,5 +1,5 @@
 pub trait PrintName {
-    fn name() -> &'static str;
+    fn name() -> String;
     fn print_name() {
         println!("{}", Self::name());
     }

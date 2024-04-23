@@ -12,11 +12,25 @@ pub fn print_name(input: TokenStream) -> TokenStream {
         input.generics.split_for_impl();
 
     let name = input.ident;
+    let params = &input.generics.params;
 
-    let expanded = quote! {
-        impl #impl_generics print_name::PrintName for #name #type_generics #where_clause {
-            fn name() -> &'static str {
-                stringify!(#name)
+    let expanded = {
+        if input.generics.params.len() > 0 {
+            quote! {
+                impl #impl_generics print_name::PrintName for #name #type_generics #where_clause {
+                    fn name() -> String {
+                            let params = stringify!(#params).split(", ").collect::<Vec<&str>>();
+                            format!("{}<{}>", stringify!(#name), stringify!(#params))
+                    }
+                }
+            }
+        } else {
+            quote! {
+                impl #impl_generics print_name::PrintName for #name #type_generics #where_clause {
+                    fn name() -> String {
+                            stringify!(#name).to_string()
+                    }
+                }
             }
         }
     };
