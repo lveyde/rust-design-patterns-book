@@ -1,6 +1,7 @@
 [workspace]
 members = [
     "print_name",
-    "print_name_derive"
+    "print_name_derive",
+    "program"
 ]
 resolver = "2"

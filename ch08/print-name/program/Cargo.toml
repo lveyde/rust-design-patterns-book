@@ -1,0 +1,10 @@
+[package]
+name = "program"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+print_name = { path = "../print_name" }
+print_name_derive = { path = "../print_name_derive" }
