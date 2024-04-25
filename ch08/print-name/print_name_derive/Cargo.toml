@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 print_name = { path = "../print_name" }
 quote = "1.0.20"
-syn = "1.0.98"
+syn = "2.0.60"
 
 [lib]
 proc-macro = true
